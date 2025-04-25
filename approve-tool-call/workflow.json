@@ -1,0 +1,67 @@
+{
+  "categories": [
+    "approval"
+  ],
+  "name": "approve-tool-call",
+  "steps": [
+    {
+      "channel_key": "in-app",
+      "ref": "in_app_feed_1",
+      "template": {
+        "action_buttons": [
+          {
+            "action": "#approve",
+            "label": "Approve"
+          },
+          {
+            "action": "#reject",
+            "label": "Reject"
+          }
+        ],
+        "markdown_body@": "in_app_feed_1/markdown_body.md"
+      },
+      "type": "channel"
+    }
+  ],
+  "trigger_data_json_schema": {
+    "properties": {
+      "metadata": {
+        "additionalProperties": true,
+        "description": "Metadata information",
+        "type": "object"
+      },
+      "tool_call": {
+        "description": "Tool call details",
+        "properties": {
+          "args": {
+            "additionalProperties": true,
+            "description": "Arguments for the method",
+            "type": "object"
+          },
+          "extra": {
+            "additionalProperties": true,
+            "description": "Extra information",
+            "type": "object"
+          },
+          "method": {
+            "description": "Method to be called",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "title": "approve-tool-call",
+    "type": "object"
+  },
+  "trigger_frequency": "every_trigger",
+  "__readonly": {
+    "environment": "development",
+    "key": "approve-tool-call",
+    "active": true,
+    "valid": true,
+    "created_at": "2025-04-20T17:59:41.138461Z",
+    "updated_at": "2025-04-20T18:13:34.435546Z",
+    "sha": "GayC+0+NRuftJTFTXPg64C/0rFA8t3J5DjcvFcrXtEk="
+  }
+}
